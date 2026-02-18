@@ -1,0 +1,11 @@
+{
+  "platform": "xyq",
+  "selectors": {
+    "login_phone": "input[placeholder*='手机号']",
+    "login_code": "input[placeholder*='验证码']",
+    "login_submit": "button:contains('登录')",
+    "chat_input": "textarea[placeholder*='描述'], div[contenteditable='true']",
+    "send_button": "button[class*='send'], .generate-btn"
+  },
+  "last_updated": "2026-02-18"
+}

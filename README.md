@@ -15,5 +15,5 @@ Instead of reading the whole DOM tree every time, we use "Platform Drivers".
 ## Platforms
 - [x] Doubao (Core logic ready)
 - [x] Gemini (Core logic ready)
-- [x] Lark / 小云雀 (Concept ready)
+- [x] 小云雀 (xyq.jianying.com - Driver ready)
 - [ ] Jimeng (WIP)
