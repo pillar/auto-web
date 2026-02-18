@@ -1,0 +1,9 @@
+{
+  "platform": "lark",
+  "selectors": {
+    "chat_input": ".rich_text_editor",
+    "send_button": "button[data-testid='chat-send-button']",
+    "history_list": ".message-list"
+  },
+  "last_updated": "2026-02-18"
+}

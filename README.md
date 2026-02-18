@@ -13,6 +13,7 @@ Instead of reading the whole DOM tree every time, we use "Platform Drivers".
 3. If fails (UI updated), Agent runs `browser snapshot` to find new selectors and updates JSON.
 
 ## Platforms
-- [x] Doubao (Concept)
-- [ ] Gemini (WIP)
+- [x] Doubao (Core logic ready)
+- [x] Gemini (Core logic ready)
+- [x] Lark / 小云雀 (Concept ready)
 - [ ] Jimeng (WIP)

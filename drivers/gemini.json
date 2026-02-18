@@ -1,0 +1,9 @@
+{
+  "platform": "gemini",
+  "selectors": {
+    "chat_input": "div[contenteditable='true'][role='textbox']",
+    "send_button": "button[aria-label*='Send']",
+    "history_list": "div[role='main']"
+  },
+  "last_updated": "2026-02-18"
+}
