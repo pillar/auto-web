@@ -1,0 +1,8 @@
+# 敏感数据
+profile/
+auth.json
+*.log
+*.tmp
+__pycache__/
+.venv/
+.DS_Store

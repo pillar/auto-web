@@ -1,0 +1,33 @@
+# Skill: Seedance 视频生成
+name: seedance-video
+platform: doubao
+description: 使用 Seedance 生成视频
+
+# 多步激活：先点图像生成，再选 Seedance
+activate:
+  steps:
+    - selector: "button:has-text('图像生成')"
+      wait_for: ".image-gen-panel"
+      timeout: 3000
+    - selector: "button:has-text('Seedance'), .seedance-tab"
+      wait_for: ".seedance-panel"
+      timeout: 5000
+
+prompt: |
+  {{description}}
+  
+  视频参数：
+  - 时长：{{duration|default('5秒')}}
+  - 风格：{{style|default('写实')}}
+  - 运镜：{{camera|default('推镜')}}
+  - 比例：{{ratio|default('16:9')}}
+
+submit:
+  selector: "button:has-text('生成视频'), button:has-text('开始生成')"
+  wait_result: ".video-result, video"
+  timeout: 120000  # 视频生成比较久
+
+output:
+  type: video
+  download: true
+  save_dir: "./outputs/videos"

@@ -1,0 +1,32 @@
+# Skill: 数据分析报告
+name: data-analysis
+platform: doubao
+description: 根据数据生成分析报告
+
+# 这个 skill 不需要点击特定模式，直接用默认对话模式
+activate:
+  selector: null  # null 表示不需要激活特定模式
+  wait_for: "div[contenteditable='true']"
+
+prompt: |
+  请分析以下数据并生成报告：
+  
+  数据：
+  {{data}}
+  
+  分析维度：
+  - {{dimension1|default('趋势分析')}}
+  - {{dimension2|default('异常识别')}}
+  - {{dimension3|default('建议输出')}}
+  
+  输出格式：{{format|default('Markdown 表格 + 要点总结')}}
+
+submit:
+  selector: null  # null 表示按回车发送
+  wait_result: ".message-content, .answer-content"
+  timeout: 60000
+
+output:
+  type: text
+  extract_code: true  # 提取代码块内容
+  save_dir: "./outputs/analysis"

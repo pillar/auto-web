@@ -1,0 +1,26 @@
+# Skill: AI 文案创作（小红书风格）
+name: xiaohongshu-copy
+platform: doubao
+description: 生成小红书风格的种草文案
+
+activate:
+  selector: "button:has-text('AI 创作')"
+  wait_for: ".ai-write-panel"
+  timeout: 5000
+
+prompt: |
+  写一篇小红书种草文案：
+  - 产品：{{product}}
+  - 卖点：{{selling_point}}
+  - 语气：{{tone|default('亲切真实')}}
+  - 字数：{{length|default('300字左右')}}
+  - 要求：带 emoji、分段清晰、有互动引导
+
+submit:
+  selector: "button:has-text('生成'), button:has-text('创作')"
+  wait_result: ".generated-content, .result-text"
+  timeout: 30000
+
+output:
+  type: text
+  save_dir: "./outputs/copy"

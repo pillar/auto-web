@@ -1,0 +1,31 @@
+# Skill: 小红书封面图生成
+name: xiaohongshu-cover
+platform: doubao
+description: 一键生成小红书风格封面图
+
+# 激活图像生成模式
+activate:
+  selector: "button:has-text('图像生成')"
+  wait_for: ".image-gen-panel"
+  timeout: 5000
+
+# Prompt 模板
+prompt: |
+  生成一张小红书封面图：
+  - 主题：{{topic}}
+  - 风格：{{style|default('清新简约')}}
+  - 配色：{{color|default('暖色调')}}
+  - 尺寸：{{ratio|default('3:4')}}
+  - 要求：{{requirement|default('文字醒目，构图居中')}}
+
+# 提交生成
+submit:
+  selector: "button:has-text('生成')"
+  wait_result: ".generated-image"
+  timeout: 60000
+
+# 输出配置
+output:
+  type: image
+  download: true
+  save_dir: "./outputs/xiaohongshu"

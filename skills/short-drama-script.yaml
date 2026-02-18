@@ -1,0 +1,38 @@
+# Skill: 短剧剧本创作
+name: short-drama-script
+platform: doubao
+description: 生成快节奏、高反转的短剧剧本
+
+activate:
+  # 直接定位输入框，无需点击按钮
+  # selector: "button:has-text('新对话')"
+  wait_for: "div[contenteditable='true'], textarea"
+  timeout: 5000
+
+prompt: |
+  写一个爆款短剧剧本（或分集大纲），必须严格遵守以下格式：
+
+  ### 格式要求
+  #### 第X集：{{title}}
+  *【场景】* 简短描述时间地点。
+  *【3秒钩子】* 开篇必须有视觉冲击或悬念，抓住眼球。
+  *【画面】* 具体的镜头语言、人物神态。
+  *【动作】* 关键动作描写。
+  *【结尾钩子】* 每集结尾必须有反转或悬念，引导看下一集。
+
+  ### 剧本参数
+  - 题材：{{genre|default('都市/重生/复仇')}}
+  - 角色设定：{{roles|default('男主：隐形首富；女主：被欺负的实习生')}}
+  - 核心冲突：{{conflict|default('身份被误解，遭到羞辱')}}
+  - 爽点/反转：{{twist|default('亮出身份，打脸全场')}}
+  - 额外要求：{{extra_requirements|default('节奏极快，结合热点')}}
+
+submit:
+  # 改为 null，强制使用回车发送，避免误点其他按钮
+  selector: null
+  wait_result: ".generated-content"
+  timeout: 60000
+
+output:
+  type: text
+  save_dir: "./outputs/scripts"
