@@ -1,0 +1,9 @@
+{
+  "platform": "doubao",
+  "selectors": {
+    "chat_input": "div[contenteditable='true']",
+    "send_button": "button[data-testid='chat_send_button']",
+    "history_list": ".chat-history-container"
+  },
+  "last_updated": "2026-02-18"
+}
